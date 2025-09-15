@@ -1,21 +1,34 @@
 package kr.co.ch02.sub2;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Computer {
 
-    //필드주입
+    // 필드 주입
     @Autowired
-    private  CPU cpu;
+    private CPU cpu;
 
-    private RAM ram;
+    // 생성자 주입(final 속성)
+    private final RAM ram;
 
-
-    // 생성자 주입 (final 속성) -- 많이쓰임
     @Autowired
     public Computer(RAM ram){
         this.ram = ram;
     }
 
-    //새터 주입
+    // 세터 주입
+    private HDD hdd;
+
+    @Autowired
+    public void setHdd(HDD hdd) {
+        this.hdd = hdd;
+    }
+
+    public void show(){
+        cpu.show();
+        ram.show();
+        hdd.show();
+    }
 }
