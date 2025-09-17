@@ -7,10 +7,10 @@
         INSERT INTO USER1 VALUES (#{uid}, #{name}, #{birth}, #{age});
     </insert>
     <select id="selectAllUser1" resultType="kr.co.ch05.ch05.dto.User1DTO">
-        select * from USER1;
+        SELECT * FROM USER1;
     </select>
     <select id="selectUser1" resultType="kr.co.ch05.ch05.dto.User1DTO">
-        select * from USER1 WHERE uid=#{uid};
+        SELECT * FROM USER1 WHERE uid=#{uid};
     </select>
     <update id="updateUser1">
         UPDATE USER1 SET

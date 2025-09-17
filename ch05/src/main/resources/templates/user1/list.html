@@ -12,20 +12,16 @@
 
 <table border="1">
     <tr>
-        <th>아이디</th>
-        <th>이름</th>
-        <th>생년월일</th>
-        <th>나이</th>
         <th>관리</th>
     </tr>
-    <tr>
-        <td>a101</td>
-        <td>홍길동</td>
-        <td>1921-03-09</td>
-        <td>33</td>
+    <tr th:each="user:${dtoList}">
+    <td>[[${user.uid}]]</td>
+        <td>[[${user.name}]]</td>
+        <td th:text="${user.birth}"></td>
+        <td th:text="${user.age}"></td>
         <td>
-            <a th:href="@{/user1/modify}">수정</a>
-            <a th:href="@{#}">삭제</a>
+            <a th:href="@{/user1/modify(uid=${user.uid},age=${user.age})}">수정</a>
+            <a th:href="@{/user1/delete(uid=${user.uid})}">삭제</a>
         </td>
     </tr>
 </table>
