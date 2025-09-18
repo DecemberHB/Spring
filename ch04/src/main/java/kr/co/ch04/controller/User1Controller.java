@@ -53,4 +53,10 @@ public class User1Controller {
         return "redirect:/user1/list";
     }
 
+    @GetMapping
+    public String remove(@RequestParam("uid") String uid){
+        service.remove(uid);
+        return "redirect:/user1/list";
+    }
+
 }
