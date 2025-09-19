@@ -31,7 +31,7 @@ public class User2Controller {
     }
 
     @GetMapping("/user2/list")
-    public String list(Model model){
+    public String list(Model model){ // 맨처음 보여주는 화면
         List<User2DTO> dtoList = user2Service.findAll();
         model.addAttribute("dtoList",dtoList); // html 페이지로 넘겨주기 위해 모델 사용
         return "user2/list";

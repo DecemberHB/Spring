@@ -44,7 +44,7 @@ public class User1Controller {
     @GetMapping("/user1/modify")
     public String modify(Model model, @RequestParam("uid") String uid){
         User1DTO user1DTO = service.findById(uid);
-        model.addAttribute("dto",user1DTO);
+        model.addAttribute("user1DTO",user1DTO);
         return "/user1/modify";
     }
     @PostMapping("/user1/modify")
@@ -53,7 +53,7 @@ public class User1Controller {
         return "redirect:/user1/list";
     }
 
-    @GetMapping
+    @GetMapping("user1/remove")
     public String remove(@RequestParam("uid") String uid){
         service.remove(uid);
         return "redirect:/user1/list";

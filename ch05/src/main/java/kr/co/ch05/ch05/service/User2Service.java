@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class User2Service {
 
-    private final User2Mapper user2Mapper;
+    private final User2Mapper user2Mapper; // 매퍼를 받기위해서 파이너널씀
 
 
     public void register(User2DTO user2DTO){
