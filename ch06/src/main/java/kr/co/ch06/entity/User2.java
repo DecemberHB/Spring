@@ -1,4 +1,4 @@
-package kr.co.ch06.Entity;
+package kr.co.ch06.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,7 +1,7 @@
 package kr.co.ch06.dto;
 
 
-import kr.co.ch06.Entity.User1;
+import kr.co.ch06.entity.User1;
 import lombok.*;
 
 @Data

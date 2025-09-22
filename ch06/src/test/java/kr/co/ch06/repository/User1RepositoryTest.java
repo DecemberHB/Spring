@@ -1,17 +1,13 @@
 package kr.co.ch06.repository;
 
-import kr.co.ch06.Entity.Child;
-import kr.co.ch06.Entity.Parent;
-import kr.co.ch06.Entity.User1;
+import kr.co.ch06.entity.Child;
+import kr.co.ch06.entity.Parent;
+import kr.co.ch06.entity.User1;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.sql.SQLOutput;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class User1RepositoryTest {

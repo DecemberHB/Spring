@@ -1,6 +1,6 @@
 package kr.co.ch06.repository;
 
-import kr.co.ch06.Entity.User2;
+import kr.co.ch06.entity.User2;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

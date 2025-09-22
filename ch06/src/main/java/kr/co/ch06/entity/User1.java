@@ -1,4 +1,4 @@
-package kr.co.ch06.Entity;
+package kr.co.ch06.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,8 +6,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import kr.co.ch06.dto.User1DTO;
 import lombok.*;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Component;
 
 @Getter
 //@Setter Entity 에서는 Setter 불변성을 위해 금지

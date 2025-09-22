@@ -1,4 +1,4 @@
-package kr.co.ch06.Entity;
+package kr.co.ch06.entity;
 
 
 import jakarta.persistence.Entity;
@@ -12,11 +12,10 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "Child")
-public class Child {
+@Table(name = "Parent")
+public class Parent {
 
     @Id
-    private String cid;
     private String pid;
     private String name;
     private int age;

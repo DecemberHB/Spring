@@ -1,6 +1,6 @@
 package kr.co.ch06.service;
 
-import kr.co.ch06.Entity.User2;
+import kr.co.ch06.entity.User2;
 import kr.co.ch06.dto.User2DTO;
 import kr.co.ch06.repository.User2Repository;
 import lombok.RequiredArgsConstructor;
