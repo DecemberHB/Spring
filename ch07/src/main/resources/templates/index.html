@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <title>ch07 Spring Security Page</title>
+    <!--
+        날짜 : 2025/09/23
+        이름 : 박효빈
+        내용 : 7장 Spring Security 실습
+
+    -->
+</head>
+<body>
+    <h3>ch07 Spring Security</h3>
+
+<h5>인증 실습</h5>
+
+    <th:block th:if="${user}">
+        <a th:href="@{user/info}">유저정보</a>
+        <a th:href="@{user/logout}">로그아웃</a>
+    </th:block>
+
+    <th:block th:unless="${user}">
+        <a th:href="@{user/login}">로그인</a>
+        <a th:href="@{user/register}">회원가입</a>
+    </th:block>
+
+</body>
+</html>

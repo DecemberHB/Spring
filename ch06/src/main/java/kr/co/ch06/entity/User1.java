@@ -14,7 +14,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @Entity // 기본키를 필수로 줘야함 @Id <<< 얘임
-@Table(name="User1")
+@Table(name="TB_User1") // 생성되는 테이블 명 왠만하면 TB_ << 붙혀야함 오라클은 예약어가 많아서 좀 그럼
 public class User1 {
 
     @Id // PK 컬럼 선언

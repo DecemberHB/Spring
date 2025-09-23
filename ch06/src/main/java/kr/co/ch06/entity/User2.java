@@ -13,7 +13,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name="User2")
+@Table(name="TB_User2")
 public class User2 {
 
     @Id

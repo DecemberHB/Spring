@@ -10,7 +10,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table
+@Table(name = "TB_File")
 public class File {
 
     @Id

@@ -24,14 +24,14 @@ public class User1Controller {
     public String list(Model model){
         List<User1DTO> dtoList = service.getUsers();
         model.addAttribute("dtoList", dtoList);
-        return "user1/list"; // list.html 보여주기
+        return "user1/list"; // list/html 보여주기
     }
 
     // 회원 등록 페이지(GET)
     @GetMapping("/user1/register")
     public String registerForm(Model model){
         model.addAttribute("user1DTO", new User1DTO()); // 빈 DTO 전달
-        return "user1/register"; // register.html 보여주기
+        return "user1/register"; // register/html 보여주기
     }
 
     // 회원 등록 처리(POST)
@@ -46,7 +46,7 @@ public class User1Controller {
     public String modifyForm(@RequestParam String userid, Model model){
         User1DTO user1DTO = service.getUser(userid);
         model.addAttribute("user1DTO", user1DTO);
-        return "user1/modify"; // modify.html 보여주기
+        return "user1/modify"; // modify/html 보여주기
     }
 
     // 회원 수정 처리(POST)

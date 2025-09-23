@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "Article")
+@Table(name = "TB_Article")
 public class Article {
 
     @Id
@@ -31,7 +31,7 @@ public class Article {
 
     // @OneToMany 관계설정에 반드시 mappedBy 속성은 양방향 관계에서 기준이 되는 속성, FK가 되는 엔티티 속성
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "article")
-    private List<Comment> commentList;
+    private List<Comment> commentList; //얘 입장으로 1:다
 
     @OneToMany(fetch = FetchType.LAZY)
     private List<File> fileList;
