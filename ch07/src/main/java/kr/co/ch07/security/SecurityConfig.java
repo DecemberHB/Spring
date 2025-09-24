@@ -12,38 +12,43 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
 
-    // 인자값 http 설정 해야함
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         // 로그인 설정
         http.formLogin(form -> form
-                        .loginPage("/user/login")
-                        .defaultSuccessUrl("/")
-                        .failureUrl("/user/login?error=true")
-                        .usernameParameter("usid")
-                        .passwordParameter("pass")
+                .loginPage("/user/login")
+                .defaultSuccessUrl("/")
+                .failureUrl("/user/login?error=true")
+                .usernameParameter("usid")
+                .passwordParameter("pass")
         );
+
         // 로그아웃 설정
-      http.logout(logout -> logout
-              .logoutUrl("/logout")
-              .invalidateHttpSession(true)
-              .logoutSuccessUrl("/user/login?logout=true"));
+        http.logout(logout -> logout
+                .logoutUrl("/user/logout")
+                .invalidateHttpSession(true)
+                .logoutSuccessUrl("/user/login?logout=true"));
 
         // 인가 설정
         http.authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/admin/**").hasRole("ADMIN")
+                .requestMatchers("/manager/**").hasAnyRole("ADMIN", "MANAGER")
+                .requestMatchers("/member/**").hasAnyRole("ADMIN", "MANAGER", "MEMBER")
+                .requestMatchers("/guest/**").permitAll()
                 .anyRequest().permitAll()
         );
 
         // 기타 설정
-        http.csrf(CsrfConfigurer::disable); // 람다식
-
+        http.csrf(CsrfConfigurer::disable);
 
         return http.build();
     }
 
-    @Bean // 암호화 객체
+    @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+
 }
